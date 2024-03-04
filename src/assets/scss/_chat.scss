@@ -1,0 +1,174 @@
+.chat {
+  position: fixed;
+  top: 50%;
+  z-index: 20;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 930px;
+  background-color: #1c0a22;
+  border-radius: 50px;
+  display: flex;
+  height: 100%;
+  max-height: 628px;
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px 20px;
+    &__user {
+      width: 360px;
+      position: relative;
+      display: flex;
+      transition: all 0.3s ease;
+      padding: 10px 30px;
+      border-radius: 500px;
+      gap: 20px;
+      cursor: pointer;
+      align-items: center;
+      &:hover {
+        background: linear-gradient(
+          90deg,
+          #f8f8f8 0%,
+          #250f2d 0.01%,
+          #3a1845 100%
+        );
+      }
+      &-img {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &-name {
+        display: flex;
+        gap: 5px;
+        text-transform: capitalize;
+        @include font(500, 14px, 1.5);
+        color: $title-color;
+        .active {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #33e159;
+          margin-bottom: 5px;
+        }
+      }
+      &-message {
+        @include font(500, 16px, 1.6);
+        color: #925fa4;
+      }
+      &-count {
+        position: absolute;
+        bottom: 22px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+        color: $title-color;
+        @include font(700, 10px, 1);
+      }
+    }
+  }
+  &-main {
+    flex-grow: 1;
+    border-radius: 50px;
+    background: #2a1332;
+    padding: 50px;
+    display: flex;
+    form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-radius: 500px;
+      background-color: #42204e;
+      padding-right: 30px;
+      input {
+        padding: 18px 30px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: $text-color;
+        @include font(400, 16px, 1.6);
+        &::placeholder {
+          color: #8b5d9a;
+        }
+      }
+      button {
+        background: none;
+        cursor: pointer;
+        border: none;
+      }
+    }
+    flex-direction: column;
+    &__name {
+      display: flex;
+      @include font(500, 16px, 1.6);
+      color: $title-color;
+      gap: 10px;
+      margin-bottom: 20px;
+      .active {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #33e159;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: $pr-color;
+      }
+    }
+    &__user {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      &-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &-message {
+        width: 245px;
+        padding: 10px 20px;
+        border-radius: 0px 500px 500px 500px;
+        background: linear-gradient(90deg, #ec008c 0%, #fc6767 100%);
+        color: $text-color;
+        @include font(400, 16px, 1.6);
+      }
+      &.me {
+        flex-direction: row-reverse;
+        .chat-main__user-message {
+          border-radius: 500px 0px 500px 500px;
+          background: linear-gradient(90deg, #0575e6 0%, #021b79 100%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin font($fw, $fz, $lh) {
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh;
+}
+
+@mixin title {
+  @include font(500, 28px, 1.3);
+  color: $title-color;
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

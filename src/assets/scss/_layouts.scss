@@ -1,0 +1,142 @@
+header {
+  position: relative;
+  z-index: 1;
+  .header-top {
+    padding: 13px 0;
+    background-color: $header-top-bg;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title {
+      @include font(500, 16px, 1.2);
+      text-transform: uppercase;
+    }
+  }
+  .header-bottom {
+    background-color: $header-bottom-bg;
+    .site-logo {
+      margin-right: 76px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+    }
+  }
+  nav {
+    margin-right: auto;
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 50px;
+      li {
+        padding: 48px 0;
+        position: relative;
+        &:has(> a.router-link-active) {
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 4px;
+            background: $pr-color;
+          }
+        }
+      }
+      span {
+        @include font(400, 16px, 1.2);
+        text-decoration: none;
+        color: $text-color;
+        cursor: pointer;
+      }
+
+      a {
+        @include font(400, 16px, 1.2);
+        text-decoration: none;
+        color: $text-color;
+      }
+    }
+  }
+  .header__profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: $text-color;
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  .lang {
+    margin-right: 50px;
+  }
+  .header__settings {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    margin-right: 50px;
+    li {
+      cursor: pointer;
+      display: flex;
+    }
+  }
+}
+.site-logo {
+  display: flex;
+  text-decoration: none;
+}
+.lang {
+  position: relative;
+  &-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    svg {
+      path {
+        stroke: $btn-pink;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 50px;
+  background-color: transparent;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .footer__list {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
+  }
+  .footer__desc {
+    position: relative;
+    z-index: 1;
+  }
+  .lang {
+    position: relative;
+    z-index: 1;
+  }
+}

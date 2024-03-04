@@ -1,0 +1,18 @@
+%pr-btn {
+  padding: 15px 30px;
+  background: $pr-color;
+  @include font(400, 14px, 1.2);
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  transition: box-shadow 0.3s ease;
+  color: $text-color;
+  text-transform: capitalize;
+  &:hover {
+    background: $hover-btn;
+    box-shadow: $shadow-btn;
+  }
+  &:active {
+    background: $active-btn;
+  }
+}

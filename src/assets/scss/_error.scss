@@ -1,0 +1,39 @@
+.error {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  &-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 1445px;
+  }
+  &-title {
+    position: relative;
+    z-index: 1;
+    @include font(500, 300px, 1);
+    margin: 0;
+  }
+  &-desc {
+    position: relative;
+    z-index: 1;
+    @include font(400, 20px, 1.2);
+    margin-bottom: 50px;
+  }
+  &-btn {
+    position: relative;
+    z-index: 1;
+    padding: 18px 36px;
+    border: 1px solid #ffffff;
+    border-radius: 500px;
+    background: transparent;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+}

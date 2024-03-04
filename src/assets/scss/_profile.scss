@@ -1,0 +1,228 @@
+.profile {
+  .container {
+    display: flex;
+    gap: 20px;
+  }
+  &-nav {
+    width: 280px;
+    padding: 30px 0;
+    flex-shrink: 0;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    background: #1c0a22;
+    border-radius: 30px;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    li {
+      position: relative;
+      padding: 0 32px;
+
+      &:has(> a.router-link-active) {
+        &::after {
+          content: "";
+          width: 2px;
+          height: 100%;
+          background: #fe6703;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .router-link-active {
+        color: #fe6703;
+        svg {
+          path {
+            fill: #fe6703;
+          }
+        }
+      }
+      transition: all 0.3s ease;
+
+      svg {
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+      &::after {
+        content: "";
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        color: #fe6703;
+        svg {
+          path {
+            fill: #fe6703;
+          }
+        }
+        &::after {
+          content: "";
+          width: 2px;
+          height: 100%;
+          background: #fe6703;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        a {
+          color: #fe6703;
+        }
+      }
+      color: $text-color;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-weight: 400;
+      &:last-child {
+        margin-top: 30px;
+        cursor: pointer;
+      }
+      a {
+        transition: all 0.3s ease;
+        font-weight: 400;
+        color: $text-color;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+  }
+  &__title {
+    @include title;
+    margin-bottom: 20px;
+  }
+  &-main {
+    width: 100%;
+    &__images {
+      width: 280px;
+      flex-shrink: 0;
+    }
+    &__thumb-images {
+      display: flex;
+      gap: 8px;
+    }
+    &__image {
+      margin-bottom: 8px;
+      width: 100%;
+      height: 369px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 50px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__thumb {
+      input {
+        display: none;
+      }
+      label {
+        cursor: pointer;
+        width: 88px;
+        height: 88px;
+        border-radius: 30px;
+        border: 1px solid #925fa4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &__wrapper {
+      display: flex;
+      gap: 20px;
+    }
+    &__form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 50px;
+      &-btn {
+        @extend %pr-btn;
+      }
+      &-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      h4 {
+        @include font(500, 18px, 1.2);
+        color: $title-color;
+      }
+    }
+  }
+  &__balance {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 480px;
+    li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      font-weight: 400;
+      padding-bottom: 20px;
+      &:first-child {
+        border-bottom: 1px solid #4a2956;
+      }
+      span {
+        font-weight: 500;
+      }
+      justify-content: space-between;
+    }
+  }
+  &__balance-btn {
+    @extend %pr-btn;
+  }
+  .input-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 20px;
+    .input-list {
+      display: flex;
+      gap: 5px;
+    }
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 23px 30px;
+      background: #42204e;
+      border-radius: 500px;
+      color: $text-color;
+      outline: none;
+      &::placeholder {
+        color: #8b5d9a;
+      }
+    }
+    textarea {
+      font-family: $site-font;
+      resize: none;
+      border-radius: 30px;
+      height: 180px;
+    }
+    &.textarea-wr {
+      align-items: flex-start;
+    }
+  }
+  &__saved-users {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
